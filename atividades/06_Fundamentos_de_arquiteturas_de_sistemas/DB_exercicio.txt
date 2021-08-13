@@ -1,0 +1,19 @@
+1) Quais das alternaivas estão corretas com relação a um banco de dados relacional?
+a) As entidades são chamadas de tabelas
+b) As colunas também são chamadas de tabelas
+c) As linhas também são chamados de registros ou tuplas
+d) a e b
+e) a e c [CORRETA]
+
+2) O que é DML?
+a) Data Move Library
+b) Direct Manipulaion Language
+c) Data Manipulation Language [CORRETA]
+d) Dictionary Manipulation Language
+
+3) O que não faz parte do conceito ACID?
+a) Durabilidade
+b) Isolamento [CORRETA]
+c) Continuidade
+d) Consistencia
+e) Atomicidade

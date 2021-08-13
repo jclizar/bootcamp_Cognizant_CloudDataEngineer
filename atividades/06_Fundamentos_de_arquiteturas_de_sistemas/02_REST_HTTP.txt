@@ -1,0 +1,8 @@
+HTTP response status code
+>> https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+Serviço WEB -> https://www.postman.com/
+>> GET, PUT, DELETE, POST (ver status code)
+
+Python
+>> https://docs.python-requests.org/en/master/

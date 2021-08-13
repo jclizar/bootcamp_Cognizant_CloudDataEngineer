@@ -1,0 +1,59 @@
+Exercícios Práticos
+
+1) Crie um arquivo de aularedes.txt
+>> touch aularedes.txt
+
+2) Exiba o número de IP da rede no terminal
+>> hostname -I
+
+3) Adicione a saída do comando anterior ao arquivo aula redes.txt
+>> echo -e "--- Informações sobre IP ---\n" >> aularedes.txt
+>> hostname -I >> aularedes.txt
+
+4) Exiba o número de IP Loopback no terminal
+>> hostname -i
+
+5) Adicione a saída do comando anterior ao arquivo aularedes.txt
+>> echo -e "\n--- Informações sobre IP Loopback ---\n" >> aularedes.txt
+>> hostname -i >> aularedes.txt
+
+6) Exiba Informações DNS sobre o host www.pudim.com.br
+>> dig www.pudim.com.br
+
+7) Adicione a saída do comando anterior ao arquivo aularedes.txt
+>> echo -e "\n--- Informações DNS site www.pudim.com.br ---\n" >> aularedes.txt
+>> dig www.pudim.com.br >> aularedes.txt
+
+8) Exiba Informações do Usuário logado na rede
+>> w
+
+9) Adicione a saída do comando anterior ao arquivo aularedes.txt
+>> echo -e "\n--- Informações sobre usuário da rede ---\n" >> aularedes.txt
+>> w >> aularedes.txt
+
+10) Execute um teste no host www.pudim.com.br com 6 pacotes
+>> ping www.pudim.com.br -w 6
+
+11) Adicione a saída do comando anterior ao arquivo aularedes.txt
+>> echo -e "\n--- Informações sobre PING site www.pudim.com.br ---\n" >> aularedes.txt
+>> ping www.pudim.com.br -w 6 >> aularedes.txt
+
+12) Trace a Rota do seu computador até o host www.pudim.com.br
+>> traceroute www.pudim.com.br
+
+13) Adicione a saída do comando anterior ao arquivo aula redes.txt
+>> echo -e "\n--- Informações de Rota ao host www.pudim.com.br ---\n" >> aularedes.txt
+>> traceroute www.pudim.com.br >> aularedes.txt
+
+14) Exiba Informações sobre Interfaces de Rede e Endereços IP no terminal
+>> ifconfig
+
+15) Adicione a saída do comando anterior ao arquivo aula redes.txt
+>> echo -e "\n--- Informações de Interface de rede e endereços IP ---\n" >> aularedes.txt
+>> ifconfig >> aularedes.txt
+
+16) Limpe o terminal
+>> clear (ctrl+l)
+
+17) Imprima o arquivo aularedes.txt com paginação no terminal
+>> cat aularedes.txt  | more

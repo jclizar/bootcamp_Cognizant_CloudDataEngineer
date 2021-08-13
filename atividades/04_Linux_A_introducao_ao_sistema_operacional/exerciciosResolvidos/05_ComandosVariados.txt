@@ -1,0 +1,21 @@
+https://bellard.org/jslinux/
+
+>> seq 1 10
+>> time seq 1 100
+>> vi texto.txt (i,"olá mundo", sair :ESC wq!)
+>> nl texto.txt (número de linhas)
+>> wc -l texto.txt (número de linhas + linhas em branco)
+>> wc -w texto.txt (número de palavras)
+>> wc -c texto.txt (número bytes)
+>> touch vazio.txt
+>> cmp texto.txt vazio.txt
+>> vi vazio.txt (i,"10 20 50 5 15 30 35 20 25)
+>> sort -n vazio.txt (sort ordem numérica)
+>> init 0
+>> telinit 0
+>> halt
+>> last reboot
+>> alias hh='history'
+>> whereis ls (mostra onde está)
+>> whichis ls (mostra apenas o caminho)
+>> logout (fim de sessão)

@@ -1,0 +1,62 @@
+cd = change directory
+>> cd ~ 
+>> cd .. (volta uma pasta)
+>> cd / 
+
+ls = list
+>> ls -l (lista conteúdo em coluna detalhada)
+>> ls -a (lista conteúdo + arquivos ocultos)
+>> ls -s (lista o conteúdo com tamanho alocado, em bloco)
+
+touch
+>> touch file1.txt file2.txt (cria vários arquivos vazios)
+>> touch -a file.txt (altera data acesso)
+>> touch -m file.txt (altera hora de modificação)
+>> touch -c file.txt (altera hora de acesso sem criar um novo arquivo)
+>> touch -t CCYYMMDDhhmm.ss file.txt (202108100759.10)
+
+cat = concatenate
+>> cat arq1.txt > arqfinal.txt (> redireciona a saída)
+
+mv = move
+>> mv -i file.txt pasta (move arquivo file para a pasta, se existir um arquivo com mesmo nome nessa pasta, pede confirmação)
+>> mv -n file.txt pasta (move o arquivo sem substituição, se já existir um arquivo não sobrescreve)
+>> mv -b file.txt pasta (move e substitui pelo backup)
+>> mv -u file.txt pasta (se o arquivo for antigo ou não existir, ele substitui)
+
+cp = copy
+>> cp -i file.txt /home/username/pasta (-i = interativo, copia arquivo file para a pasta, se existir um arquivo com mesmo nome nessa pasta, pede confirmação)
+>> cp -v file.txt /home/username/pasta (-v = verbose, ele dá um aviso no terminal)
+>> cp -v -r pasta2 /home/username/pasta (-r para pastas)
+>> cp -l file.txt /home/username/pasta (cria hard links em vez de copiar os arquivos)
+>> cp -s file.txt /home/username/pasta (cria links simbólicos em vez de copiar os arquivos)
+>> cp -u file.txt /home/username/pasta (se o arquivo for antigo ou não existir, ele copia)
+
+mkdir = make directory
+>> mkdir nomepasta
+
+rm = remove
+>> rm file.txt (remove o arquivo)
+>> rm -f file.txt (remove a força)
+
+find
+>> find . (pesquisa todos os arquivos dentro da pasta)
+>> find./ -type f -name "a" (f = file, encontra todos os arquivos com a letra "a")
+>> find./ -type d -name "meu*" (d = diretório, * tudo que começa com "meu")
+>> find./ -type d -name ".*" (arquivos ocultos)
+
+man = manual
+>> man find
+
+diff = difference
+>> diff arq1.txt arq1.txt (compara dois arquivos, se os arquivos forem iguais não mostra nada na saída)
+
+remover diretório
+>> rmdir nomepasta (diretório vazio)
+>> rm -rf nomepasta (diretório cheio)
+
+env = environment (variáveis de ambiente)
+>> nomevar = nomepasta
+>> export nomevar
+>> env (exibe todas variáveis de ambiente, verá nomevar)
+

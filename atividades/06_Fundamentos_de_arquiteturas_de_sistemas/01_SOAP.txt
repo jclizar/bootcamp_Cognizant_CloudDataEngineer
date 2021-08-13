@@ -1,0 +1,9 @@
+Exemplo SOAP Message (WSDL)
+>> http://soapclient.com/xml/soapresponder.wsdl
+>> soapui.org (facilita a visualização)
+
+Exemplo Python (Zeep SOAP)
+>> from zeep import Client
+>> client = Client('http://soapclient.com/xml/soapresponder.wsdl')
+>> result = client.service.Method1(bstrParam1='oi',bstrParam2='tchau')
+>> print(result)

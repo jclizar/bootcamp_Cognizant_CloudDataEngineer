@@ -1,0 +1,48 @@
+1) Crie um arquivo chamado compacta.txt
+>> touch compactar.txt
+
+2) Edite este arquivo com os nomes dos compactadores
+>> nano compactar.txt
+
+3) Compacta este arquivo com zip
+>> zip  compactar.zip compactar.txt
+
+4) Descompacta o arquivo
+>> unzip compactar.zip 
+
+5) Compacte o arquivo com rar
+>> rar a compactar.rar compactar.txt
+
+6) Descompacte este arquivo
+>> rar x compactar.rar 
+
+7) Compacte este arquivo com gzip
+>> gzip compactar.txt
+
+8) Descompacte este arquivo
+>> gunzip compactar.txt.gz
+
+9) Compacte este arquivo com bzip2
+>> bzip2 compactar.txt
+
+10) Descompacte este arquivo
+>> bzip2 -d compactar.txt.bz2
+
+11) realize o arquivamento deste arquivo com tar
+>> tar -cf compatado.tar compactar.txt
+
+12) Compacte o arquivamente tar com gzip
+>> gzip compatado.tar 
+
+13) Descompacte este arquivo
+>> tar -xvf compactado.tar.gz compactar.gz
+
+14) Saia do terminal
+>> exit
+
+15) Exiba o arquivo compactar.txt
+>> cat compactar.txt
+
+16) Execute o comando init 0 para desligar o sistema
+>> init 0
+

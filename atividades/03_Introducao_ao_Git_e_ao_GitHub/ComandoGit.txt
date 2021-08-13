@@ -1,0 +1,84 @@
+encriptar com sha1, se alterar o arquivo muda o hash
+>> openssl sha1 texto.txt (40 caracteres o sha1)
+
+(objetos funcamentais)
+Blob ele contem meta dados do git
+>> echo 'conteudo' | git hash-object --stdin (mesmo sha1)
+>> echo -e 'conteudo' | openssl sha1 (diferente)
+>> echo -e 'blob 9\0conteudo' | openssl sha1 (metadados mesmo sha1)
+
+Tree, tb contem metadados
+ - apront blob, sha1 e msg
+Commit, projeta q junta td
+ - aponta para arvore, parente, autor, mensagem, timestamp
+
+############################################
+
+sempre começa com git (chama o git seguido de seu comando)
+git init (cria .git cria um repositório)
+git add
+git commit
+
+ls -a (mostras arquivos ocultos)
+
+iniciando
+>>git init
+>>git config --global user.email "jessica_lizar@yahoo.com"
+>>git config --global user.name jclizar
+para remover config
+>>git config --global --unset.email
+>>git config --global --unset.name
+
+>> git add * ou git add .
+>> git commit -m "commit inicial"
+
+>> git status (vê o status)
+>> git config --list (vê todas as configs)
+
+>> git remote add origin https://github.com/jclizar/bootcampCognizant_CloudDataEngineer.git
+>> git branch -M main
+>> git push -u origin main
+
+>> git remote -v
+>> git pull (git junta a versao do github com a local)
+
+>> git clone <url> baixa o repo
+
+###########################################
+
+status dos arquivos
+>> untracked (qnd add o arquivo)
+>> tracked
+ - unmodified (remove ele vai para untracked)
+ - modified (unmodified é editado)
+ - staged (qnd dá commit ele vai para unmodified)
+
+Ambiente de desenvolvimento
+> working directory
+> staging area
+> local repository (commit entrega o repositorio local)
+
+Servidor
+> remote repository 
+
+mv strogonoff.md ./receitas (move)
+git add strognoof.md receitas/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

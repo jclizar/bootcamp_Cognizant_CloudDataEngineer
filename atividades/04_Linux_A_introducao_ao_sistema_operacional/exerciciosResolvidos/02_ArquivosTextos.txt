@@ -1,0 +1,52 @@
+Exercícios de Revisão
+
+1) Crie uma pasta de nome Exercícios e Acesse a mesma
+>> mkdir exercicios && cd exercicios
+
+2) Crie um arquivo vazio de nome lista_nomes.txt
+>> touch lista_nomes.txt
+
+3) Abra este arquivo com o Editor Nano
+>> nano lista_nomes.txt
+
+4) Digite 20 Nomes de Pessoas Conhecidas incluindo o seu, pulando de linha para cada nome inserido.
+>> 
+
+5) Salve o arquivo
+>> ctrl+O, Enter, ctrl+x
+
+6) Exiba os 10 primeiros Nomes da Lista
+>> head lista_nomes.txt
+
+7) Exiba os 10 ultimos Nomes da Lista
+>> tail lista_nomes.txt
+
+8) Procure no texto o seu nome
+>> grep jessica lista_nomes.txt (ou cat lista_nomes.txt | grep jessica)
+
+9) Crie um Arquivo chamado setembro.txt com a saida do comando cal.
+>> cal setembro 2021 > setembro.txt 
+
+10) Adicione o conteúdo do arquivo setembro.txt ao arquivo lista_nomes.txt
+>> cat setembro.txt >> lista_nomes.txt
+
+11) Exiba o arquivo lista_nomes.txt com paginação
+>> less lsita_nomes.txt (cat lista_nomes.txt | more)
+
+12) Exiba o caminho do arquivos setembro.txt
+>> find ~ -name setembro.txt
+
+13) Exiba o tipo do arquivo lista_nomes.txt
+>> file lista_nomes.txt
+
+14) Exiba a explicação do comando ls
+>> whatis ls
+
+15) Renomeie o Arquivo lista_nomes.txt para arquivo.txt
+>> mv lista_nomes.txt arquivo.txt
+
+16) Limpe o Terminal
+>> clear (ctrl+l)
+
+17) Saia do Terminal
+>> exit (ctrl+l)

@@ -1,0 +1,50 @@
+1) Crie um usuário chamado teste
+>> sudo adduser teste
+
+2) Crie um grupo chamado grupoteste
+>> sudo addgroup grupoteste
+
+3) Adicione o usuário teste ao grupoteste
+>> sudo adduser teste grupoteste
+
+4) Troque a senha do usuário teste
+>> passwd teste
+
+5) troque o usuário atual para o usuário teste
+>> su teste
+
+6) Exiba os grupos do usuário teste
+>> groups
+
+7) Exiba todos os usuários do sistema
+>> cat /etc/passwd
+
+8) Exiba todos os grupos do sistema
+>> cat /etc/group
+
+9) Delete o usuário teste
+>> sudo userdel -r teste
+
+10) Delete o grupo grupoteste
+>> sudo grupodel grupoteste
+
+11) Troque para o usuário root
+>> sudo su
+
+12) Crie um arquivo de nome teste.txt
+>> touch teste.txt
+
+13) edite o arquivo teste.txt como o nome desse curso
+>> nano teste.txt
+
+14) Mude as permissões do arquivo teste.txt para 111
+>> chmod 111 teste.txt
+
+15) Saia do usuário root para seu computador
+>> su jclizar
+
+16) Tente exibir o arquivo teste.txt no terminal
+>> cat teste.tx (permissão negada)
+
+17) Desligue o computador pelo terminal
+>> init 0 

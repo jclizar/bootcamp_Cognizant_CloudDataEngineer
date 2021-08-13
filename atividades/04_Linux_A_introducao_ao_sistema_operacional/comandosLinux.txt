@@ -1,0 +1,244 @@
+## Atalhos terminal linux ###################
+>> ctrl+alt+t 
+
+## Atalhos dentro do terminal ###################
+>> TAB (auto completa)
+>> ctr+l (limpa terminal)
+>> ctr+T (fecha o terminal)
+
+## Manual comandos ###################
+>> man <comando>
+>> man ls
+
+## Abreviações ###################
+>> -a == --al
+
+## Comandos ###################
+>> pwd (mostra caminho local onde estamos)
+>> ~ (/home/user/)
+>> ls (lista)
+>> ls -l (nomes + detalhes)
+>> ls --help (explica no idioma instlado)
+>> cd (change directory)
+>> mkdir <nome pasta> (cria pasta, make directory)
+>> cd / (mudará de ~para / q são os diretorios referentes ao linux)
+>> cd ~ (volta para pasta pessoal)
+>> history (comandos utilizados no terminal)
+>> !! (repetição do ultimo comando do terminal)
+>> mv <nome pasta> <novo nome> (renomear)
+>> mv <nome pasta> ~ (move para pasta pessoal)
+>> touch arquivo.txt (cria arquivos vazios sem conteudo)
+>> cp arquivo.txt /home/user (faz uma copia na pasta do user)
+>> rmdir <pasta> (remover diretorios vazios)
+>> rm -r (apaga recursivamente os arquivos)
+>> rm -r *zip (apaga todos os aqruivos com zip)
+>> rm arquivo.txt (remove arquivo)
+>> exit (sai do terminal)
+
+## Arquivos ###################
+>> touch teste.txt
+>> nano teste.txt (editor, ctrl == ^)
+>> cat teste.txt (visualiza o conteudo)
+>> tac teste.txt (visualiza o conteudo do fim para o inicio)
+>> head teste.txt (mostra as 10 primeiras linhas)
+>> tail teste.txt  (mostra as 10 ultimas)
+>> tail teste.txt > tailteste.txt (cria um arquivo)
+>> cal (mostra calendário do mês corrente)
+>> cal 2021 (mostra ano)
+>> cal > calendarioAgosto.txt
+>> date (mostra data + horario)
+>> date >> calendarioAgosto.txt (append no fim com espaço separando)
+
+>> tail teste.txt | grep linux (marca as palavras linux no texto)
+>> cat teste.txt >> teste.txt
+>> cat teste.txt | more (cria paginação MAIS, bom para arquivos grandes)
+>> cat teste.txt | less (paginação : vai dando entre e o conteudo vai aparecendo)
+>> ctrl+z (para exibição)
+
+>> cat maio.txt & calendario_2020.txt (separa por terminal os resultados, enter finaliza a saida)
+>> cat maio.txt && calendario_2020.txt (uma saida apenas todo o conteudo sem pausa)
+>> mkdir linux_ubuntu && cd linux_ubuntu (cria e entra na pasta)
+>> file maio.txt (fala o tipo)
+>> whatis file (fala o que o comando faz)
+>> find ~ -name maio.txt (traz o caminho do arquivo)
+
+## Diretorios linux + comandos sistemas ###################
+>> cd / (entrar na pasta raiz)
+>> cat /proc/meminfo/ | more (infos de memoria)
+>> lspci (todos os hardwares conectados via pci)
+>> lsusb (dispositivos usb)
+>> arch (mostra arquitetura do sistema)
+>> uname (ou uname -m, nome do kernel)
+>> uname -r (versao do kernel)
+>> free (saida de memoria fisica  e swap (memoria virtual))
+>> du -h ~ | more (relação de memoria, -h == human redable)
+>> cat /etc/passwd | more (todos os users do sistema)
+>> reboot (shutdown -r, renicia a maquina)
+>> shutdown -h now (desliga)
+>> lscpu | more (infos sobre cpu)
+>> lshw | more (todos os hardwares)
+>> lshw -short (alguns caminhos de hardware)
+
+## Rede e comandos ###################
+>> sudo apt install net-tools (sudo elevação de privilégios) 
+>> ifconfig (interfaces de rede, inet=ipv4, inet6=ipv6 hexadecimal, lo = local)
+>> hostname (nome do computador na rede)
+>> hostname -I (end IP na rede)
+>> hostname -i (end loopback)
+>> who (login na rede)
+>> whoami (login)
+>> ping (pacote de requisição para o host e recebe as respostas q é o pong, para ctrl+z)
+>> ping <site> -w 4 (limita 4 pacotes de ping)
+>> dig <site> (info DNS, caminhos de rede, IP->nome de dominio)
+>> dig <site> +short (mostra somente DNS do site)
+
+>> sudo apt install tracerout
+>> traceroute <site> (mostra qtos nós (dispositivos) do seu pc até servidor do site)
+
+>> sudo apt install whois
+>> whois <site> (info sobre o site)
+
+>> sudo apt-install finger
+>> finger (info do user logado no host)
+
+## Comandos diversos ###################
+>> history -c (apaga histórico)
+>> alias trc='traceroute'
+>> nl aularedes.txt (exibe o arquivo como um cat, com o numero de linhas)
+>> wc -l aularedes.txt (somatório, conta as linhas em branco)
+>> wc -w aularedes.txt (conta mum palavaras)
+>> wc -c aularedes.txt (num bytes)
+>> wc -m aularedes.txt (num caracteres
+>> ls -a (exibe arquivos ocultos .file)
+>> ls -F (coloca barra nos diretórios(azul))
+>> cmp aularedes.txt vazio.txt (comparação entre arquivos)
+>> diff aularedes.txt vazio.txt (diferença arquivos de texto)
+>> sort -n aularedes.txt (organizar em ordem numerica)
+
+>> last reboot
+>> route -n (tabelas de roteamento IP do kernel)
+>> time traceroute www.google.com.br (calcula o tempo do comando)
+>> uptime (mostra o tempo q o sistema está rodando)
+
+>> sudo apt install cowsay
+>> cowsay (vaquinha q fala)
+>> sudo apt install cmatrix
+>> cmatrix (tela do filme matrix)
+
+>> init 0 (desliga pc agora)
+>> telinit 0 (desliga pc agora)
+>> halt (precisa de autenticação para desligar pc)
+>> seq 1 10 (imprime uma sequencia num)
+
+>> whereis ls (mostra onde está)
+>> whichis ls (mostra apenas o caminho)
+>> logout (fim de sessão)
+
+## Usuários ###################
+>> sudo adduser nomeuser (cria user)
+>> su nomeuser (trocar user)
+>> passwd nomeuser (trocar senha e pede senha segura)
+>> lastlog (info de login dos users)
+>> last (exibe listagem de entrada e saida do user sos sistema)
+>> logname (nome do user atual logado no sistema)
+>> id (todos os identificados do user)
+>> cat /etc/passwd | more (exibe todos os users)
+>> sudo userdel -r nomeuser (remove user e sua pasta pessoal -r)
+
+Grupos
+>> cat /etc/group (exibe todos os grupos do sistema)
+>> groups (exige os grupos que o user pertence)
+>> sudo addgroup nomegrupo (cria grupo)
+>> sudo adduser nomeuser nomegrupo (add user sudoer ao grupo)
+>> sudo gpasswd -a nomeuser nomegrupo (add user sudoer ao grupo)
+>> sudo gpasswd -d nomeuser nomegrupo (remove user do grupo)
+>> sudo groupdel nomegrupo (remove grupo)
+
+Permissões arquivos e diretórios
+r=4 (read), w=2 (write), x=1 (eXecution), num modo octal
+inicio: d (diretório), - (arquivo)
+permissão ordem: dono|grupo|outros
+>> ls -lh (verifica permissões em um diretório)
+>> chmod 100 arquivo.txt  (muda permissão de arquivo/diretório, max 777)
+
+## Compactdores, arquivamento ###################
+>> gzip arquivo.txt (compactar arquivo.txt.gz)
+>> gzip -9 arquivo.txt (taxa de compactação máxima)
+>> gunzip arquivo.txt.gz (descompactar)
+
+>> zip arquivo.zip arquivo1.txt arquivo2.txt pasta
+>> unzip arquivo.zip
+
+>> bzip2 arquivo.txt (mais atual arquivo.bz2)
+>> bzip2 -d arquivo.bz2 (-d descompacta)
+
+>> sudo apt install rar (esse precisa ser instalado)
+>> rar a arquivo.rar arquivo1.txt pasta
+>> rar x arquivo.rar (descompactar)
+
+Arquivamento (tar)
+>> tar -cf arquivo.tar a1.txt a2.txt pasta (tar até arquivos do sistema)
+>> gzip arquivo.tar (arquivo.tar.gz)
+>> tar -xvf arquivo.tar.gz
+>> tar -xvf arquivo.tar.gz -C ~/Documentos (outro diretorio)
+
+>> zip arquivos.tar.zip arquivos.tar (tar.zip)
+>> unzip arquivos.tar.zip
+>> tar -xvf arquivos.tar
+
+>> rar a arquivos.tar.rar arquivos.tar (tar.rar)
+
+>> bzip2 arquivos.tar (tar.bz2)
+>> bzip2 -d arquivos.tar.bz2
+
+## Pacotes ###################
+extensão: .deb, .rpm, outros
+gerenciadores: apt, yum, dpkg
+
+UBUNTU
+>> sudo apt install nomepacote 
+>> sudo apt upgrade nomepacote (atualização)
+>> sudo apt remove nomepacote (remover)
+
+>> sudo su (user root)
+>> sudo apt update && apt upgrade (atualização do sistema)
+
+Sites de pacotes
+pkgs.org
+rpm.pbone.net
+>> sudo dpkg -i pacote.deb
+
+Descrição do pacote
+>> sudo dpkg -l pacore.deb
+
+FEDORA
+>> rpm -ivh pacote.rpm
+>> rpm -e pacote.rpm (remoção de pacotes)
+
+>> sudo yum install nomepacote
+>> sudo yum update nomepacote
+>> sudo yum remove pacote
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

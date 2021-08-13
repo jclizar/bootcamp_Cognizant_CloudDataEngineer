@@ -1,0 +1,63 @@
+1) Exiba todos os hardwares que existem na máquina com paginação.
+>> lshw | more
+
+2) Salve a saída do comando anterior no arquivo minhamaquina.txt
+>> echo -e "--- INFORMAÇÕES DE HARDWARE ---\n" > minhamaquina.txt
+>> lshw >> minhamaquina.txt
+
+3) Exiba informações sobre a memória física e virtual na sua máquina
+>> free
+
+4) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo -e "\n--- INFORMAÇÕES DE MEMÓRIA---\n" >> minhamaquina.txt
+>> free >> minhamaquina.txt
+
+5) Exiba todas as placas PCI conectadas
+>> lspci
+
+6) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo -e "\n--- INFORMAÇÕES DE PLACAS PCI ---\n" >> minhamaquina.txt
+>> lspci >> minhamaquina.txt
+
+7) Exiba todos dispositivos USB conectados
+>> lsusb
+
+8) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo -e "\n--- INFORMAÇÕES DE DISPOSTIVOS USB ---\n" >> minhamaquina.txt
+>> lsub >> minhamaquina.txt
+
+9) Exiba as informações sobre o processador
+>> lscpu
+
+10) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo -e "\n--- INFORMAÇÕES DE PROCESSADOR (CPU) ---\n" >> minhamaquina.txt
+>> lscpu>> minhamaquina.txt
+
+11) Exiba o nome do Kernel
+>> uname
+
+12) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo -e "\n--- INFORMAÇÕES SOBRE KERNEL ---\n" >> minhamaquina.txt
+>> echo "Nome do Kernel: " >> minhamaquina.txt
+>> uname >> minhamaquina.txt
+
+13) Exiba a versão do Kernel
+>> uname -r
+
+14) Adicione a saída do comando anterior ao arquivo minhamaquina.txt
+>> echo "Versão do Kernel: " >> minhamaquina.txt
+>> uname -r >> minhamaquina.txt
+
+15) Exiba a arquitetura do Kernel
+>> arch
+>> echo "Arquitetura do Kernel: " >> minhamaquina.txt
+>> arch >> minhamaquina.txt
+
+16) Reinicie a máquina
+>> reboot
+
+17) Abra o arquivo minhamaquina.txt
+>> nano minhamaquina.txt (cat minhamaquina.txt | more)
+
+18) Desligue a máquina
+>> shutdown -h now

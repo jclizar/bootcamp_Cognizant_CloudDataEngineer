@@ -1,0 +1,30 @@
+lista de diretórios na pasta
+>> dir (win)
+>> ls (linux)
+
+navegar entra as pastas
+>> cd / (base) (win/linux)
+>> cd.. retrocedor um nível
+
+limpar terminal
+>> cls (win)
+>> clear ou Ctrl+l (linux)
+
+autocompletar
+>> TAB (atalho) (win/linux)
+
+criar pasta
+>> mkdir (win/linux)
+
+printa uma frase no terminal
+>> echo frase (win/linux)
+>> echo hello > hello.txt (joga num arquivo)
+
+deletar
+>> del (arquivos) (win)
+>> del workspace (deleta tudo dentro da pasta workspace)
+>> rmdir (apadga pasta)
+>> rmdir /S /Q
+>> rm (apagar linux)
+>> rm -rf (deleta tudo recurivamente (r) sem mensagem a força (f))
+

@@ -1,0 +1,34 @@
+1) Instale o wireshark com o gerenciador apt
+>> sudo apt install wireshark
+
+2) Atualize o wireshark
+>> sudo apt upgrade wireshark
+
+3) remova o wireshark
+>> sudo apt remove wireshark
+
+4) Atualize o sistema
+>> sudo apt update && apt upgrade 
+
+5) Baixe e instale o pacote deb do postgresql
+>> cd Downloads/
+>> sudo dpkg -i postgresql.deb
+
+6) Remova o postgresql
+>> sudo dpkg -r postgresql-fdw
+
+7) Vá para o Fedora
+>> 
+
+8) Baixe o pacote do postgresql com o gerenciador de pacotes rpm
+>> cd Downloads/
+>> rpm -ivh --nodeps postgresql.rpm
+
+9) Remova o pacote postgresql com gerenciador rpm
+>> rpm -e postgresql.rpm
+
+10) Com o gerenciador yum instale o pacote postgresql
+>> sudo yum install postgresql
+
+11) Remova o pacote postgresql com o gerenciador yum
+>> sudo yum remove postgresql
