@@ -1,0 +1,158 @@
+## DOCUMENTOS ##################	
+
+(play with docker: problema docker-compose)
+
+>> docker: 
+(terminal)
+vi docker-compose.yml
+
+version: '3.8'
+
+services:
+        db:
+            image: mongo
+            container_name: db
+            restart: always
+            environment:
+                - MONGO_INITDB_ROOT_USERNAME=dio
+                - MONGO_INITDB_ROOT_PASSWORD=dio
+            ports:
+                - "27017:27017"
+            volumes:
+                - C:/Users/meneg/Desktop/dbdata:/data/db
+	
+(terminal)
+docker-compose up -d
+docker container ps
+
+//se tiver mongo instalado no pc
+mongo --host 127.0.0.1:27017 -p dio -u dio
+
+//client caso não tenha mongodb instalado no pc
+robomongo.org
+-type: Direct connection
+-name: new connection
+-adress: localhost:27017
+authentication
+-Database: admin
+-Username: dio
+-Password: dio
+
+--- mongo Cloud ---
+https://www.mongodb.com/try
+-build free cluster
+
+Network acess
+-add current ip adress
+Database acess
+-add user
+dio
+dio
+Clusters
+-connect (shell ou mongo compass)
+
+*Mongo Compass interface**
+mongodb+srv://dio:<dio>@cluster0.e8m6d.mongodb.net/test
+
+**Shell**
+-Ihave MongoBD Shell installed
+
+(terminal)
+mongosh "mongodb+srv://cluster0.e8m6d.mongodb.net/myFirstDatabase" --username dio --password dio
+show databases
+use fenda_biquni; (se existir ele muda, se nao ele cria)
+
+//expliciatemnte
+db.createCollection("teste",{capped: true, max: 2, size: 2}); 
+show collections;
+db.teste.insertOne({"name": "teste 1"});
+db.teste.insertOne({"name": "teste 2"});
+db.teste.find({}); (lista todos objtos da collection)
+db.teste.insertOne({"name": "teste 3"});	
+db.teste.find({}); (observa q ele expira o primeiro, max==2)
+
+//implicitamente
+db.teste1.insertOne({"age": 10}); 
+db.teste1.find({}); (não tem limite de inserção)
+
+db.clients.insertMany([{"name": "Patrick", "age": 38}, {"name": "Bob Esponja"}]);
+db.clients.find({});
+db.clients.save({"_id": ObjectId("612511255df2a4e67151c876"),"name":"Patrick","age": 40});
+
+db.clients.update({"name" : "Bob Esponja"}, {$set :{"age": 41}});
+db.clients.find({});
+
+db.clients.update({"age" : 38}, {$set :{"age": 41}}, {multi: true});
+db.clients.find({});
+db.clients.updateMany({"age": 41}, {$set :{"age": 45}});
+db.clients.find({});
+
+//lista todos
+db.clients.find({"age":45}); 
+// lista o primeiro
+db.clients.find({"age":45}).limit(1); 
+
+db.clients.find({"age":45, "name":"Patrick"});
+
+db.clients.insertOne({"name": "Patrick2", "age": 30});
+db.clients.find({"age": {$in: [30,45]}});
+
+db.clients.find({$or: [{"name": "Bob Esponja"},{"age":30}]});
+// menor
+db.clients.find({"age": {$lt: 45}});
+// menor ou igual
+db.clients.find({"age": {$lte: 45}}); 
+
+// apaga apenas um
+db.clients.deleteOne({"age": 45}); 
+db.clients.update({"name" : "Patrick2"}, {$set :{"age": 45}});
+// apaga todos
+db.clients.deleteMany({"age": 45}); 
+
+--- indices
+
+//mongo aceita comando JS
+for(var i=0; i<1000; i++){
+	db.clients.insert({name: "Cliente" + i, age:i});
+}
+
+db.getCollection('clients').count({});
+//analisa apenas 1 doc
+db.getCollection('clients').find({_id: ObjectId("61251ce05df2a4e67151c888")}).explain(true); 
+// analisa todos os doc
+db.getCollection('clients').find({name: "Cliente0"}).explain(true); 
+
+// melhora performance
+db.getCollection('clients').createIndex({name: 1}, {"name": "idx_name"}); 
+// agora analisa apenas um doc
+db.getCollection('clients').find({name: "Cliente0"}).explain(true); 
+
+--- mongo Cloud ---
+Cluster0
+...
+Load sample
+-sample_restaurants
+
+(terminal)
+show databases;
+use sample_restaurants;
+show collections;
+
+db.getCollection('restaurants').count({});
+db.getCollection('restaurants').find({});
+db.getCollection('restaurants').distinct("cuisine");
+
+--agregação
+db.getCollection('restaurants').aggregate([{$group: {_id: "$cuisine", total: {$sum: 1}}}]);
+// adiciona o campo teste = true da agregação, nao modifica original
+db.getCollection('restaurants').aggregate([{$addFields: {"teste": true}}]); 
+
+db.getCollection('restaurants').aggregate([{$group: {_id: "$cuisine", total: {$sum: 1}, id_maximo: {$max: "$restaurant_id"} }}]);
+db.getCollection('restaurants').aggregate([{$group: {_id: "$cuisine", total: {$sum: 1}, id_maximo: {$min: "$restaurant_id"} }}]);
+
+--operadores lógicos
+db.getCollection('restaurants').aggregate([{$match: {$and: [{cuisine: "American"},{borough: "Brooklyn"}] } }]);
+db.getCollection('restaurants').aggregate([{$match: {$or: [{cuisine: "American"},{borough: "Brooklyn"}] } }]);
+
+
+

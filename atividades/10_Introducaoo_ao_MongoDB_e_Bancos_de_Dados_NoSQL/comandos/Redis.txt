@@ -1,0 +1,44 @@
+## CHAVE-VALOR ##################
+
+>> REDIS
+	sandbox: https://try.redis.io/
+	
+	(terminal)
+	SET user1:name "Bob Esponja"
+	GET user1:name
+	SET user '{"name":"Patrick","age":31}'
+	GET user
+	SET user2:name "Lula Molusco" EX 10
+	GET user2:name
+	EXISTS user2:name
+	EXISTS user1:name
+
+	LPUSH user1:hobbies "Caçar agua viva"
+	LPUSH user1:hobbies "Comer hamburgueres"
+	(error) GET user1:hobbies
+	LINDEX user1:hobbies 0
+	LINDEX user1:hobbies 1
+	LINDEX user1:hobbies 2
+	
+	LRANGE user1:hobbies 0 1
+	LRANGE user1:hobbies 0 0
+	LRANGE user1:hobbies 0 2
+
+	TYPE user1:name
+	TYPE user1:hobbies
+	
+	SET user2:name "Lula Molusco" EX 10
+	(segundos) TTL user1:name
+	TTL user2:name
+	(milisegundos) pTTL user2:name
+
+	SET user2:name "Patrick" EX 30
+	TTL user2:name
+	GET user2:name
+	PERSIST user2:name
+	TTL user2:name
+	GET user2:name
+	
+	DEL user2:name
+	EXISTS user2:name
+	GET user2:name

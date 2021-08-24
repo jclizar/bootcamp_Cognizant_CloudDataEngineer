@@ -1,0 +1,21 @@
+## GRAFOS ##################
+
+>>Neo4j (cypher): www.sandbox.neo4j.com
+	sandbox: blank prokect > open
+
+	(terminal)
+	CREATE (:CLient {name : "Bob esponja", age:28, hobbies:['Caça agua viva, Comer hamburguer']})
+	MATCH (bob_esponja) RETURN bob_esponja;
+	CREATE (:Client {name: "Lula Molusco", age: 30, hobbies: ['Tocar clarinete']}) -[:Bloqueado]->(:Client {name: "Patrick", hobbies: ['Caçar agua viva']})
+	MATCH (todos) RETURN todos;
+	CREATE (:Object)
+	MATCH (lula:Client {name:"Lula Molusco"}) , (patrick:Client {name:"Patrick"}) CREATE (lula)-[:Bloqueado]->(patrick)
+	MATCH (lula:Client {name: "Lula Molusco"})-[relaciona:Bloqueado]-> () DELETE relaciona
+	MATCH (todos) RETURN todos;
+	MATCH (lula:Client {name: "Lula Molusco"}) DELETE lula;
+	MATCH (todos) RETURN todos;
+
+	MATCH (patrick:Client {name: "Patrick"}) SET patrick.age = [22];
+	MATCH (patrick:Client {name:"Patrick"}) SET patrick:Client_Especial
+
+	MATCH (todos) RETURN todos;
