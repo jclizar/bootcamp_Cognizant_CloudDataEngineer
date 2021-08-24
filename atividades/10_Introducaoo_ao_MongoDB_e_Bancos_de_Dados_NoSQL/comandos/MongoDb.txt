@@ -19,7 +19,7 @@ services:
             ports:
                 - "27017:27017"
             volumes:
-                - C:/Users/meneg/Desktop/dbdata:/data/db
+                - ./dbdata:/data/db
 	
 (terminal)
 docker-compose up -d
@@ -52,13 +52,14 @@ Clusters
 -connect (shell ou mongo compass)
 
 *Mongo Compass interface**
-mongodb+srv://dio:<dio>@cluster0.e8m6d.mongodb.net/test
+>>copy mongodb+srv://
 
 **Shell**
 -Ihave MongoBD Shell installed
 
 (terminal)
-mongosh "mongodb+srv://cluster0.e8m6d.mongodb.net/myFirstDatabase" --username dio --password dio
+>> copy mongosh mongodb+srv://c
+
 show databases
 use fenda_biquni; (se existir ele muda, se nao ele cria)
 
