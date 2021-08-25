@@ -1,0 +1,53 @@
+## Hbase #########################
+
+- playWithDocker: https://hub.docker.com/r/harisekhon/hbase
+	
+	(docker terminal)
+	docker pull harisekhon/hbase	
+	docker run -ti harisekhon/hbase
+	
+	(Hbase shell)
+	// lista as tabelas
+	list
+	create 'funcionarios', 'pessoais', 'profissionais'
+	put 'funcionarios', '1', 'pessoais:nome', 'Maria'
+	scan 'funcionarios'
+	put 'funcionarios', '1', 'pessoais:cidade', 'São Paulo'
+	put 'funcionarios', '2', 'profissionais:empresa','Everis'
+	scan 'funcionarios'
+	
+	disable 'funcionarios'
+	alter 'funcionarios', NAME=>'hobby', VERSIONS=>5
+	enable 'funcionarios'
+	scan 'funcionarios'
+	put 'funcionarios', '1', 'hobby:nome','ler livros'
+	put 'funcionarios', '1', 'hobby:nome','pescar'
+	scan 'funcionarios'
+	
+	//confirmar se os dados estão integros: scan/conut	
+	// mostra o versionamento, histórico
+	scan 'funcionarios', {VERSIONS=>3}
+	//conta a qtd de row keys
+	count 'funcionarios'
+
+	// delete por versão, não apaga todos os hobbies
+	// apaga a última inserção de hobby
+	delete 'funcionarios', '1', 'hobby:nome'
+	
+	//TTL
+	create 'ttl_exemplo', {'NAME'=>'cf','TTL'=>20}
+	put 'ttl_exemplo', 'linhas123', 'cf:desc', 'TTL Exemplo'
+	scan 'ttl_exemplo'
+
+## Cassandra #########################
+
+- sandbox: https://katacoda.com/datastax/courses/cassandra-try-it-out/try-cql
+
+	(shell cqlsh)
+	//comandos
+	help
+
+
+
+
+
