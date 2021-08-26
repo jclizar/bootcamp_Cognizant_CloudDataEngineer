@@ -4,7 +4,7 @@
 </div>
 
 
-> Bem vindo ao seu bootcamp focado em engenharia de dados com Cloud, crie soluções Python, uma das principais linguagens de programação da atualidade, aprenda os principais conceitos de big data e dê seus primeiros passos no ambiente de nuvem. O prazo para finalização do bootcamp é 20/10/2021.
+> Bem vindo ao seu <a href="https://digitalinnovation.one/bootcamps/cognizant-cloud-data-engineer">bootcamp focado em engenharia de dados com Cloud</a>, crie soluções Python, uma das principais linguagens de programação da atualidade, aprenda os principais conceitos de big data e dê seus primeiros passos no ambiente de nuvem. O prazo para finalização do bootcamp é 20/10/2021.
 
 * Nível: intermediário
 * Atividades: 26
