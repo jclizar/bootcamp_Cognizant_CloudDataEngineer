@@ -25,7 +25,7 @@
         <img src="./atividades/dio_bagde_desafio1.png" width="8%" align="left">
         <em><b>Análise de dados com Python e Pandas</b></em><br>
         Desafio de projeto<br>
-        Link: Em breve
+        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/14_Analise_de_dados_com_Python_e_Pandas">Painel Coronavírus</a>
 </div>
 <br>
 <div width="100%">
@@ -56,4 +56,7 @@
         Link: Em breve
 </div>
 <br>
+
+# Subfolder download
+> Para fazer o download de uma pasta especifica sem clonar o projeto inteiro use o <a hre="https://downgit.github.io/">DownGit</a> link.
 

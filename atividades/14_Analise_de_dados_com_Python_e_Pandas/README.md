@@ -8,8 +8,12 @@
 * Carga horária: 4 h
 * Nível: Intermediário
 
-# Projeto
-> Aplicando os conceitos apresentados em aula. O tema desenvolvido foi um panorama nacional do <bold>COVID-19</bold>.
+<div width=100%>
+    <img src="./projeto/SARS-CoV-2_without_background.png" width="20%" align="right">
+<h1>Projeto</h1>
+</div>
+
+> Aplicando os conceitos apresentados em aula. O tema desenvolvido foi um panorama nacional do <bold>Coronavírus</bold>.
 - Base de dados: <a href="https://covid.saude.gov.br/">https://covid.saude.gov.br/</a>
 - Exemplo de algumas informações apresentadas:
     - taxa de letalidade
@@ -18,4 +22,4 @@
     - informações agrupadas por ano
 
 # Download
-- Dowgit: <a href="https://downgit.github.io/">projeto</a>
+- Projeto: <a href="https://downgit.github.io/#/home?url=https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/14_Analise_de_dados_com_Python_e_Pandas">Dowgit Link</a>
