@@ -9,7 +9,7 @@
 * Nível: Intermediário
 
 <div width=100%>
-    <img src="./projeto/SARS-CoV-2_without_background.png" width="20%" align="right">
+    <!--<img src="./projeto/SARS-CoV-2_without_background.png" width="20%" align="right">-->
 <h1>Projeto</h1>
 </div>
 
