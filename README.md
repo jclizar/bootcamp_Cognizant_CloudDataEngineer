@@ -58,5 +58,5 @@
 <br>
 
 # Subfolder download
-> Para fazer o download de uma pasta especifica sem clonar o projeto inteiro use o <a hre="https://downgit.github.io/">DownGit</a> link.
+> Para fazer o download de uma pasta especifica sem clonar o projeto inteiro use o <a href="https://downgit.github.io/">DownGit</a> link.
 
