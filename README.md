@@ -32,7 +32,7 @@
         <img src="./atividades/dio_bagde_desafio4.png" width="8%" align="left">
         <em><b>Resolvendo algoritimos com Python</b></em><br>
         Desafio de código<br>
-        Link: Em breve
+        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/15_Resolvendo_algoritmos_com_Python">Fibonacci | Números Pares | Resposta de Theons</a>
 </div>
 <br>
 <div width="100%">
