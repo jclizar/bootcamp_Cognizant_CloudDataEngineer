@@ -1,0 +1,23 @@
+--------------------------------------------------
+Import subsets com Sqoop seguindo as seguintes
+premissas:
+--------------------------------------------------
+1) Todos os Pokémon lendários
+
+mysql -u root -h localhost -pEveris@2021
+SELECT * FROM trainning.pokemon WHERE Legendary IS true
+quit
+
+sudo -u hdfs sqoop import \
+--connect jdbc:mysql://localhost/trainning \
+--username root --password "Everis@2021" \
+--direct \
+--table pokemon \
+--target-dir /user/everis-bigdata/pokemon/1 \
+--where "Legendary=1"
+
+(navegador: ip(ifconfig):8088/cluster)
+
+hdfs dfs -l /user/everis-bigdata/pokemon/1
+hdfs dfs -cat /user/everis-bigdata/pokemon/1/*
+hdfs dfs -cat /user/everis-bigdata/pokemon/1/* |wc -l

@@ -1,0 +1,49 @@
+-------------LIVE DEMO
+$ sudo service hadoop-hdfs-namenode start
+$ sudo service hadoop-hdfs-secondarynamenode start
+$ sudo service hadoop-hdfs-datanode start
+$ sudo service hadoop-mapreduce-historyserver start
+$ sudo service hadoop-yarn-resourcemanager start
+$ sudo service hadoop-yarn-nodemanager start
+
+$ ifconfig (inet 192....)
+$ ssh 192.... -l everis
+
+$ sh scrpit_apoio/start_all_service.sh (caso nao queira digitar live code)
+
+-------------HDFS
+PUT / GET
+- Copiar arquivo HDFS para local
+$ hdfs dfs -get /tmp/file_teste.txt
+
+- Ingestão manual
+$ hdfs dfs -put file_teste.txt /user/everis-bigdata/
+
+$ sudo -u hdfs hdfs dfs -chmod -R 777 /tmp
+$ hdfs dfs -ls -h /
+$ hdfs dfs -cat /tmp/file_teste.txt |head -10
+$ hdfs dfs -rm /tmp/file_teste.txt
+$ hdfs dfs -mkdir /tmp/delete
+$ hdfs dfs –cp /tmp/file_teste.txt /tmp/delete/
+$ hdfs dfs –touchz /tmp/delete/empty_file
+$ hdfs dfs -rm -R /tmp/delete
+$ hdfs dfs -du -h /user
+$ hdfs fsck /tmp/ -files -blocks
+
+//-------------YARN
+
+$ sudo sed -i 's|hdfs://|hdfs://bigdata-srv:8020/|g'
+/etc/hadoop/conf/yarn-site.xml
+$ sudo –u hdfs yarn jar /usr/lib/hadoop-mapreduce/hadoopmapreduce-examples.jar wordcount /tmp/file_teste.txt
+/tmp/wc_output
+
+Log
+
+$ sudo -u hdfs yarn logs -applicationId
+application_1611089476809_0001 |more
+$ sudo -u hdfs yarn logs -applicationId
+application_1611089476809_0001 > wordcount.log
+
+
+//-------------DESLIGAR
+$ sudo shutdown -h now
