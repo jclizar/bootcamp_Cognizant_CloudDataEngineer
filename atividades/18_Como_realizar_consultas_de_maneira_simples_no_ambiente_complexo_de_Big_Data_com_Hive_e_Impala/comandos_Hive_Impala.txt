@@ -1,0 +1,208 @@
+----------------------------------------------HIVE
+$ hive
+hive> show databases;
+hive> create database teste01;
+hive> show databases;
+hive> create database if not exists teste01;
+hive> create database if exists teste01;
+
+hive> create table teste01.teste01 (id int);
+hive> use teste01; //set banco
+hive> create table teste02 (id int);
+hive> show tables;
+
+hive> set hive.cli.print.header=true;
+hive> show tables;
+hive> select * from teste01;
+
+hive> set hive.cli.print.current.db=true;
+hive> desc tetse01;
+hive> insert into table teste01 values(1);
+hive> insert into table teste01 values(2); //faz mapreduce
+hive> select * from teste01;
+
+$ hdf dfs -ls /user/hive/warehouse
+$ hdf dfs -ls /user/hive/warehouse/teste01.db
+$ hdf dfs -ls /user/hive/warehouse/teste01.db/teste01 //como não especificamos o tipo é uma tabela gerenciada
+
+$ hive
+hive> create external table teste03 (id int);
+hive> show create table teste01;
+hive> show create table teste03;
+hive> insert into table teste03 values(100);
+
+$ cat employee.txt
+
+$ hive
+hive> !clear; //comando linux
+hive> CREATE EXTERNAL TABLE TS_EXT_EMPLOYEE(
+	id SRING,
+	groups STRING,
+	age STRING,
+	active_lifestyle STRING,
+	salary STRING)
+	ROW FORMART DELIMITED FIELDS
+	TERMINATED BY '\;'
+	STORED AS TEXTFILE
+	LOCATION '/users/hive/warehouse/external/tabelas/employee'
+	tblproperties ("skip.header.line.count"="1");
+hive> show create table TS_EXT_EMPLOYEE;
+
+$ hdfs dfs -put /hone/everis/employee.txt /users/hive/warehouse/external/tabelas/employee
+$ hdfs dfs -ls /users/hive/warehouse/external/tabelas/employee
+
+$ hive
+hive> desc TS_EXT_EMPLOYEE;
+
+hive> CREATE TABLE TB_EMPLOYEE(
+	id INT
+	groups STRING,
+	age INT
+	active_lifestyle STRING,
+	salary DOUBLE)
+	PARTIRIONED BY (dt_processamento)
+	ROW FORMART DELIMITED FIELDS
+	TERMINATED BY '|'
+	STORED AS PARQUET TBLPROPERTIES ("parquet.compression"="SNAPPY");
+
+hive> insert into table TB_EMPLOYEE partition (dt_processamento='20201118')
+	select id, groups, age, active_lifestyle, salary
+	from TS_EXT_EMPLOYEE;
+
+$ hdfs dfs -ls /user/hive/warehouse/teste01.db/
+$ hdfs dfs -ls /user/hive/warehouse/teste01.db/tb_employee
+$ hdfs dfs -ls /user/hive/warehouse/teste01.db/tb_employee/dt_processamento='20201118'
+$ hdfs dfs -ls /user/hive/warehouse/teste01.db/tb_employee/dt_processamento='20201118'/00000000_0
+$ hdfs dfs -cat /user/hive/warehouse/teste01.db/tb_employee/dt_processamento='20201118'/00000000_0 //um binário
+
+$ hdfs dfs -copyToLocal /user/hive/warehouse/teste01.db/tb_employee/dt_processamento='20201118'/00000000_0 .
+$ ls -ltrh
+$ parquet-tools schema 00000000_0
+
+$ hive
+hive> create external table localidade (
+	street string,
+	city string,
+	zip string,
+	state string,
+	beds string,
+	baths string,
+	sq_ft string,
+	type string,
+	sale_date string,
+	price string,
+	latitude string,
+	longitude string)
+	PARTITIONED BY (particao STRING)
+	ROW FORMAT DELIMITED FIELDS TERMINATED BT ","
+	STORED AS TEXTFILE
+	location '/user/hive/warehouse/external/tabelas/localidade'
+	tblproperties ("skip.header.line.count"="1);
+	
+hive> load data local inpath 'home/everis/base_localidade.csv'
+	into table teste01.localidade partition (particao='2021-01-21');
+hive> select count(*) from localidade;
+
+$ hdfs dfs -ls /user/hive/warehouse/tabelas/localidade
+$ hdfs dfs -cat /user/hive/warehouse/tabelas/localidade/particao=2021-01-21
+
+$ hive
+hive> create table tb_localidade_parquet (
+	street string,
+	city string,
+	zip string,
+	state string,
+	beds string,
+	baths string,
+	sq_ft string,
+	type string,
+	sale_date string,
+	price string,
+	latitude string,
+	longitude string)
+	PARTITIONED BY (particao STRING)
+	ROW FORMAT DELIMITED FIELDS TERMINATED BT ","
+	STORED AS PARQUET;
+
+hive> INSERT into TABLE tb_localidade_parquet
+	PARTITION(PARTICAO='01')
+	SELECT
+	street,
+	city,
+	zip,
+	stateg,
+	beds,
+	baths,
+	sq_ft,
+	type,
+	sale_date,
+	price,
+	latitude,
+	longitude
+	FROM localidade;
+
+hive> select * from tb_localidade_parquet;
+hive> show tables;
+hive> desc tb_localidade_parquet;
+hive> select tab01.id, tab02.zip
+	from tb_ext_employee tab01
+	full outer join tb_localidade_parquet tab02
+	on tab01.id = tab02.zip
+
+hive> select tab01.id, tab02.zip,
+	'teste' as col_concatenada,
+	concat(tab01.id,tab02.zip) as col_concatenada
+	from tb_ext_employee tab01
+	full outer join tb_localidade_parquet tab02
+	on tab01.id = tab02.zip;
+
+$ hive -S -e "select count(*) from teste01.localidade";
+
+
+----------------------------------------------IMPALA
+
+$ impala-shell
+
+> show databases;
+> INVALIDATE METADATA teste01.tb_localidade_parquet;
+> show databases;
+> use teste01;
+> show tables;
+> INVALIDATE METADATA teste01.localidade;
+> select * from teste01.tb_localidade_parquet;
+> quit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
