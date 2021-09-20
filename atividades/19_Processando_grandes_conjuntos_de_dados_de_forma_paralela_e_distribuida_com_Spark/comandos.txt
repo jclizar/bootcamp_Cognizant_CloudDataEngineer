@@ -1,0 +1,26 @@
+terminal VM 
+
+>> cd $SPARK_HOME
+>> ls
+>> cd conf/ #configurações
+>> cd sbin/ #montar seu proprio cluster
+>> cd bin/ #pyspark fica aqui, shell interativo, etc
+>> spark-shell
+>> ctr+c #sair terminal
+
+>> wget https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv
+
+>> spark-shell
+scala> var insurance = spark.read.format("csv").option("sep",",").option("header","true").load("file://home/everis/avengers.csv")
+scala> insurance.show(10,false)
+scala> insurance.select("URL").show(1,false)
+
+>> pyspak
+> insurance = spark.reaf.format("csv").option("sep",",").option("header","true").load("file://home/everis/avengers.csv")
+
+
+>> spark-shell
+scala> var df = spark.read.format("csv").option("sep",",").option("header","true").load("file://home/everis/avengers.csv")
+scala> df.CreateOrReplaceTempView("av")
+scala> df.printSchemas
+scala> spark.sql("SELECT Apperances FROM av WHERE URL LIKE '%IRON'").show(10,false) #resultado é um dataframe
