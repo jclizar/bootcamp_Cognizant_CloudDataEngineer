@@ -1,0 +1,43 @@
+1) Início Rápido: Criar um data factory usando a interface do usuário do Azure Data Factory
+https://docs.microsoft.com/pt-br/azure/data-factory/quickstart-create-data-factory-portal
+
+CLI
+https://docs.microsoft.com/pt-br/azure/data-factory/quickstart-create-data-factory-azure-cli
+
+2) Tutorial: Extrair, transformar e carregar dados usando o Azure Databricks
+https://docs.microsoft.com/pt-br/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse
+
+3) Introdução ao Azure Synapse Analytics
+https://docs.microsoft.com/pt-br/azure/synapse-analytics/get-started
+
+4) Transformar dados usando a atividade do Spark no Azure Data Factory e no Synapse Analytics
+https://docs.microsoft.com/pt-br/azure/data-factory/transform-data-using-spark
+
+5) Executar transformações avançadas de dados de streaming com o Apache Spark e o Kafka no Azure HDInsight 
+https://docs.microsoft.com/pt-br/learn/modules/perform-advanced-streaming-data-transformations-with-spark-kafka/
+
+6) Início Rápido: criar um trabalho do Stream Analytics usando o portal do Azure
+https://docs.microsoft.com/pt-br/azure/stream-analytics/stream-analytics-quick-create-portal
+
+Powershell
+https://docs.microsoft.com/pt-br/azure/stream-analytics/stream-analytics-quick-create-powershell
+
+7) Tutorial: Analisar os dados de uma chamada fraudulenta com o Stream Analytics e visualizar os resultados em um dashboard do Power BI
+https://docs.microsoft.com/pt-br/azure/stream-analytics/stream-analytics-real-time-fraud-detection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
