@@ -1,0 +1,72 @@
+*Criar conta gmail
+*https://console.cloud.google.com/ > concorda
+*selecione um projeto > novo projeto
+nome: desafio-dataproc > sem organização > criar >
+selecionar projeto > ativa conta >
+dados > iniciar teste gratuito >
+
+--- Dataproc ------------------------------------
+
+A) CloudStorage > criar bucket >
+nome:desafio-dataproc
+Standard
+Uniforme
+criar
+
+B) Pesquisar Dataproc (já ativamos API)
+Cluster > configurar cluster >
+nome: cluster-desafio-dataproc
+tipo cluster: Padrão
+escalonamento: none
+versão: default (Debian)
+componesntes: gateway > habilitar
+ -opcionais: Zepelin, Jupyter, Zookeper
+Number of work nodes: 2
+configuração rede > sub-rede: default >
+criar (lado esquerdo)
+
+Job
+id job: job-inicial
+tipojob: Spark
+cluster: cluster-desafio-dataproc
+Classe principal ou jar: org apache spork ecamples SparkPi
+Arquivo jar: file///usr/lib/spark/examples/jars/spark-examples/jar
+agrupamentos: 1000
+
+Job cli
+cloudshell: gcloud dataproc jobs submit spark \
+--cluster-cluster-desafio-dataproc\
+--region="us-central1"" \
+--class-org.apache.spark.example.SparkPi \
+--jars-ile://usr/lib/spark/examples/jars/spark-examples/jar
+-- 1000
+
+--- Desafio ------------------------------------
+
+1) Cluster (CLI)
+git clone https://github.com/marcelomarques05/dio-desafio-dataproc
+cd dio-desafio-dataproc
+gsutil ls (validar nome)
+
+2) vim contador.py 
+{SEU_BUCKET} trocar por desafio-dataproc
+
+3) gsutil cp contador.py livro.txt gs://desafio-dataproc
+
+4) jobs > enviar jov> job-deafio
+tipo de job: PySpark
+Arquivo Python principal: gs://desafio-dataproc/contador.py
+enviar
+
+5) CloudStorage > desafio-dataproc > resultado
+
+
+
+
+
+
+
+
+
+
+
