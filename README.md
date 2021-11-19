@@ -53,7 +53,7 @@
         <img src="./atividades/dio_bagde_desafio4.png" width="8%" align="left">
         <em><b>Desafios matemáticos em Python</b></em><br>
         Desafio de código<br>
-        Link: Em breve
+        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/26_Desafios_matematicos_em_Python">Rodízio de cavalos e carruagens | Preenchimento de Vetor III | A Mudança</a>
 </div>
 <br>
 
