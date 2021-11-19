@@ -16,4 +16,4 @@
 
 * Resultados:
     * <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/25_Criando_seu_Ecossistema_de_Big_Data_na_Nuvem/data/">data</a>
-    * <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/25_Criando_seu_Ecossistema_de_Big_Data_na_Nuvem/outuput/">output</a>
+    * <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/25_Criando_seu_Ecossistema_de_Big_Data_na_Nuvem/output/logs1/">output</a>
