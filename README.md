@@ -39,14 +39,14 @@
         <img src="./atividades/dio_bagde_desafio2.png" width="8%" align="left">
         <em><b>Criando um Ecossistema Hadoop totalmente gerenciado com Google Cloud Dataproc</b></em><br>
         Desafio de projeto<br>
-        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/23_Criando_um_Ecossistema_Hadoop_Totalmente_Gerenciado_com_Google_Cloud">Contagem de palavras</a>
+        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/23_Criando_um_Ecossistema_Hadoop_Totalmente_Gerenciado_com_Google_Cloud">Contagem de palavras | GCP</a>
 </div>
 <br>
 <div width="100%">
         <img src="./atividades/dio_bagde_desafio3.png" width="8%" align="left">
         <em><b>Criando seu ecossistema de Big Data na Nuvem</b></em><br>
         Desafio de projeto<br>
-        Link: Em breve
+        <a href="https://github.com/jclizar/bootcamp_Cognizant_CloudDataEngineer/tree/main/atividades/25_Criando_seu_Ecossistema_de_Big_Data_na_Nuvem">Contagem de palavras | AWS</a>
 </div>
 <br>
 <div width="100%">
